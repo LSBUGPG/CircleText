@@ -23,11 +23,11 @@ public class CircleText : BaseMeshEffect
                 }
 
                 centre = centre / (float)pointsInGlyph;
-                float arc = centre.x;
+                float distance = centre.x;
                 float radius = centre.y;
                 if (radius > 0.0f)
                 {
-                    float angle = arc / radius;
+                    float angle = distance / radius; // angle in radians
 
                     Matrix4x4 translate = Matrix4x4.Translate(Vector3.right * -centre.x);
                     Matrix4x4 rotate = Matrix4x4.Rotate(Quaternion.Euler(Vector3.forward * -angle * Mathf.Rad2Deg));
